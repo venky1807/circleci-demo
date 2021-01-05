@@ -29,4 +29,4 @@ jobs:
       - run:
           name: cloudhub deployment
           command: |
-            mvn clean deploy -DmuleDeploy -Danypoint.username=venky135719 -Danypoint.password=Reddy@123 -Danypoint.environment=Sandbox
+            mvn clean deploy -DmuleDeploy -Danypoint.username=venky2121 -Danypoint.password=Reddy@1357 -Danypoint.environment=Sandbox -Dmule.version=4.3.0
