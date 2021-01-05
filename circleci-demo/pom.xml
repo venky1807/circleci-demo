@@ -31,6 +31,17 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+					<cloudHubDeployment>
+		            	<uri>https://anypoint.mulesoft.com</uri>
+		            	<muleVersion>${mule.version}</muleVersion>
+		            	<username>${anypoint.username}</username>
+		            	<password>${anypoint.password}</password>
+		            	<applicationName>circleci-demo</applicationName>
+		            	<environment>${anypoint.environment}</environment>
+		            	<properties>
+		                	<key>value</key>
+		            	</properties>
+		        </cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
