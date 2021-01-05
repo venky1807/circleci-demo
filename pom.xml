@@ -32,15 +32,14 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
-		            	<uri>https://anypoint.mulesoft.com</uri>
-		            	<muleVersion>${mule.version}</muleVersion>
-		            	<username>${anypoint.username}</username>
-		            	<password>${anypoint.password}</password>
-		            	<applicationName>circleCi-demo</applicationName>
-		            	<environment>${anypoint.environment}</environment>
-		            	<properties>
-		                	<key>value</key>
-		            	</properties>
+		            	<muleVersion>4.3.0</muleVersion>
+		            	<username>venky2121</username>
+		            	<password>Reddy@1357</password>
+		            	<applicationName>circleci-demo-venky</applicationName>
+		            	<environment>Sandbox</environment>
+		            	<workers>1</workers>
+		            	<workerType>Micro</workerType>
+		            	<objectStoreV2>true</objectStoreV2>
 		        </cloudHubDeployment>
 				</configuration>
 			</plugin>
