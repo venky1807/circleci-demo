@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7c4cf664-79b0-4212-8ccf-76632fbf3ffd" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="circleci-demoFlow" doc:id="fb12892b-1fd6-4051-b069-6ed5cf2f07fe" >
+		<http:listener doc:name="Listener" doc:id="6125b993-dd1d-4a5f-91a7-578b8c88c1c4" config-ref="HTTP_Listener_config" allowedMethods="GET" path="/test"/>
+		<ee:transform doc:name="Transform Message" doc:id="09a6c138-0671-4464-a347-89386d6a4c66" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"Data": "This is sample data"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="3ce9f856-c2be-489e-9f8a-3e5a65401748" message="success"/>
+	</flow>
+</mule>
