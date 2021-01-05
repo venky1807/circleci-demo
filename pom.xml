@@ -33,10 +33,10 @@
 				<configuration>
 					<cloudHubDeployment>
 		            	<muleVersion>4.3.0</muleVersion>
-		            	<username>venky2121</username>
-		            	<password>Reddy@1357</password>
+		            	<username>${anypoint.username}</username>
+		            	<password>${anypoint.password}</password>
+		            	<environment>${anypoint.environment}</environment>
 		            	<applicationName>circleci-demo-venky</applicationName>
-		            	<environment>Sandbox</environment>
 		            	<workers>1</workers>
 		            	<workerType>Micro</workerType>
 		            	<objectStoreV2>true</objectStoreV2>
